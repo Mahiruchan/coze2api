@@ -59,6 +59,21 @@ python main.py
 
 将用户的消息发送到 Coze API，获取响应，并将其转换为 OpenAI Chat API 所需的流式 SSE 格式响应。
 
+### 示例 curl 请求
+
+```bash
+curl -X POST http://127.0.0.1:8080/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "X-API-Key: key1" \
+-d '{
+  "model": "coze-model",
+  "user": "test-user",
+  "messages": [
+    {"role": "user", "content": "你好"}
+  ],
+  "stream": true
+}'
+```
 
 ## 安全性
 
